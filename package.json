@@ -1,0 +1,23 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha main_test.js",
+    "start": "nodemon main.js",
+    "junit": "mocha main_test.js --reporter mocha-junit-reporter --reporter-options mochaFile=./junit.xml"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "describe": "^1.2.0",
+    "express": "^4.18.2",
+    "mocha": "^10.2.0",
+    "winston": "^3.8.2",
+    "nodemon": "^2.0.20",
+    "mocha-junit-reporter": "^2.2.0"
+  }
+}
