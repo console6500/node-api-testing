@@ -4,9 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "mocha main_test.js",
     "start": "nodemon main.js",
-    "junit": "mocha main_test.js --reporter mocha-junit-reporter --reporter-options mochaFile=./junit.xml"
+    "test": "mocha main_test.js --reporter mocha-junit-reporter --reporter-options mochaFile=./junit.xml"
   },
   "author": "",
   "license": "ISC",
