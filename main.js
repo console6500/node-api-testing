@@ -10,15 +10,15 @@ const data = JSON.parse(fs.readFileSync('data.json'));
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.colorize(),
-    winston.format.simple(),
-    winston.format((info, opts) => {
-      if (info.res) {
-        info.message = `${info.message} ${info.res.statusCode}`;
-      }
-      return info;
-    })()
+      winston.format.timestamp(),
+      winston.format.colorize(),
+      winston.format.simple(),
+      winston.format((info, opts) => {
+        if (info.res) {
+          info.message = `${info.message} ${info.res.statusCode}`;
+        }
+        return info;
+      })(),
   ),
   transports: [
     new winston.transports.Console(),
@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 // Define a route that returns a single item of data based on GUID
 app.get('/:guid', (req, res) => {
   const guid = req.params.guid;
-  const item = data.find(item => item.guid === guid);
+  const item = data.find((item) => item.guid === guid);
   if (item) {
     res.send(item);
   } else {
