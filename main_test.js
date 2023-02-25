@@ -18,7 +18,8 @@ describe('Express app', () => {
   // Test the "//:guid" endpoint
   describe('GET /:guid', () => {
     it('should return a single item of data', async () => {
-      const res = await chai.request(app).get('/05024756-765e-41a9-89d7-1407436d9a58');
+      const res =
+        await chai.request(app).get('/05024756-765e-41a9-89d7-1407436d9a58');
       expect(res.status).to.equal(200);
       expect(res.body).to.be.an('object');
       expect(res.body.guid).to.equal('05024756-765e-41a9-89d7-1407436d9a58');
